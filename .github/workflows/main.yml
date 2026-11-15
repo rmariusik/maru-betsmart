@@ -30,15 +30,13 @@ jobs:
         run: |
           DATE=$(date -u +%F)
        
-          for PAGE in $(seq 1 10); do
-            curl -s "https://v3.football.api-sports.io/odds?date=$DATE&page=$PAGE" \
-          -H "x-apisports-key: $API_KEY" \
-          -o "odds_$PAGE.json"
-          done
+         
+                curl -s "https://v3.football.api-sports.io/odds?date=$DATE" \
+        -H "x-apisports-key: $API_KEY" \
+        -o odds.json
+      
 
-        jq -s '.[0] + {response: (map(.response // []) | add), results: (map(.results // 0) | add)}' odds_*.json > odds.json
-
-          rm odds_*.json
+         
 
 
 
