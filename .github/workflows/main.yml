@@ -14,7 +14,6 @@ jobs:
     steps:
       - name: Descarca repository
         uses: actions/checkout@v4
-
       - name: Preia meciurile
         env:
           API_KEY: ${{ secrets.API_FOOTBALL_KEY }}
