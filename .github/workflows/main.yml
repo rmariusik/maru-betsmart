@@ -36,7 +36,7 @@ jobs:
           -o "odds_$PAGE.json"
           done
 
-      jq -s '.[0] + {response: (map(.response // []) | add), results: (map(.results // 0) | add)}' odds_*.json > odds.json
+        jq -s '.[0] + {response: (map(.response // []) | add), results: (map(.results // 0) | add)}' odds_*.json > odds.json
 
           rm odds_*.json
 
