@@ -15,7 +15,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
       - name: Preia meciurile si cotele
         env:
           API_KEY: ${{ secrets.API_FOOTBALL_KEY }}
