@@ -29,17 +29,9 @@ jobs:
           API_KEY: ${{ secrets.API_FOOTBALL_KEY }}
         run: |
           DATE=$(date -u +%F)
-       
-         
-                curl -s "https://v3.football.api-sports.io/odds?date=$DATE" \
+          curl -s "https://v3.football.api-sports.io/odds?date=$DATE" \
         -H "x-apisports-key: $API_KEY" \
-        -o odds.json
-      
-
-         
-
-
-
+       -o odds.json
       - name: Salveaza rezultatele
         run: |
           git config user.name "github-actions[bot]"
